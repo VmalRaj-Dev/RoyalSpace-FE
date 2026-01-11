@@ -1,0 +1,32 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /admin/
+Disallow: /private/
+Disallow: /account/
+Disallow: /checkout/
+Disallow: /cart/
+
+# Sitemap location
+Sitemap: https://rspacestudio.com/sitemap.xml
+
+# Specific bots
+User-agent: Googlebot
+Allow: /
+
+# Facebook crawler
+User-agent: facebookexternalhit/1.1
+Allow: /
+
+# Twitter crawler
+User-agent: Twitterbot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: facebookexternalhit
+Allow: /

@@ -1,0 +1,98 @@
+/* Custom animations for Products page */
+
+@keyframes blob {
+  0%, 100% { transform: translate(0px, 0px) scale(1); }
+  33% { transform: translate(30px, -50px) scale(1.1); }
+  66% { transform: translate(-20px, 20px) scale(0.9); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes gradient {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+.animate-blob {
+  animation: blob 7s infinite;
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+.animation-delay-4000 {
+  animation-delay: 4s;
+}
+
+.animation-delay-1000 {
+  animation-delay: 1s;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Removed gradient animation - using single colors now */
+
+.hover\:scale-102:hover {
+  transform: scale(1.02);
+}
+
+/* Line clamp utility */
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Performance optimizations */
+.category-content {
+  contain: layout style paint;
+  will-change: transform;
+}
+
+/* Improved loading spinner */
+.loading-spinner {
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+/* Optimize animations for better performance */
+.optimized-animation {
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .animate-blob {
+    width: 200px !important;
+    height: 200px !important;
+  }
+  
+  /* Reduce animations on mobile for better performance */
+  .category-content {
+    transform: none !important;
+  }
+}
+
+/* Disable animations for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .animate-blob,
+  .animate-float,
+  .animate-gradient {
+    animation: none;
+  }
+  
+  .optimized-animation {
+    will-change: auto;
+    transform: none;
+  }
+}
